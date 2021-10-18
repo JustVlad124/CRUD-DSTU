@@ -262,6 +262,7 @@
                         continue;
                     }
                     $sql = $sql . " WHERE $key $oper[$key] '$value'";
+                    $i = 0;
                 }
                 else
                 {

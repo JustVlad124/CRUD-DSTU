@@ -40,7 +40,7 @@
               <td>INT</td>
               <td>
                 <select onchange="show(event.target, 'id_operator')" class="form-select" id="id_select">
-                  <option value="=" selected>=</option>
+                  <option selected value="=">=</option>
                   <option value="!=">!=</option>
                   <option value=">">></option>
                   <option value=">=">>=</option>
@@ -51,7 +51,7 @@
                   <option value="BETWEEN">BETWEEN</option>
                   <option value="NOT BETWEEN">NOT BETWEEN</option>
                 </select>
-                <input type="hidden" name="id_operator" id="id_operator">
+                <input type="hidden" name="id_operator" id="id_operator" value="=">
               </td>
               <td><input name="id"></td>
             </tr>
@@ -71,7 +71,7 @@
                   <option value="IS NULL">IS NULL</option>
                   <option value="IS NOT NULL">IS NOT NULL</option>
                 </select>
-                <input type="hidden" name="title_operator" id="title_operator">
+                <input type="hidden" name="title_operator" id="title_operator" value="LIKE">
               </td>
               <td><input name="title"></td>
             </tr>
@@ -91,7 +91,7 @@
                   <option value="IS NULL">IS NULL</option>
                   <option value="IS NOT NULL">IS NOT NULL</option>
                 </select>
-                <input type="hidden" name="date_writing_operator" id="date_writing_operator">
+                <input type="hidden" name="date_writing_operator" id="date_writing_operator" value="LIKE">
               </td>
               <td><input name="date_writing"></td>
             </tr>
@@ -111,7 +111,7 @@
                   <option value="IS NULL">IS NULL</option>
                   <option value="IS NOT NULL">IS NOT NULL</option>
                 </select>
-                <input type="hidden" name="description_operator" id="description_operator">
+                <input type="hidden" name="description_operator" id="description_operator" value="LIKE">
               </td>
               <td><input name="description"></td>
             </tr>
@@ -131,7 +131,7 @@
                   <option value="BETWEEN">BETWEEN</option>
                   <option value="NOT BETWEEN">NOT BETWEEN</option>
                 </select>
-                <input type="hidden" name="id_author_operator" id="id_author_operator">
+                <input type="hidden" name="id_author_operator" id="id_author_operator" value="=">
               </td>
               <td><input name="id_author"></td>
             </tr>
@@ -151,7 +151,7 @@
                   <option value="BETWEEN">BETWEEN</option>
                   <option value="NOT BETWEEN">NOT BETWEEN</option>
                 </select>
-                <input type="hidden" name="id_genre_operator" id="id_genre_operator">
+                <input type="hidden" name="id_genre_operator" id="id_genre_operator" value="=">
               </td>
               <td><input name="id_genre"></td>
             </tr>

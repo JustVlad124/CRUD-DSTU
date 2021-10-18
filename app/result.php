@@ -54,13 +54,16 @@
             <th>Description</th>
             <th>Author ID</th>
             <th>Genre ID</th>
-            <!-- <th scope="col">Action</th> -->
           </tr>
         </thead>
         <tbody>
           <?php
             foreach ($books as $book)
             {
+              $params = ['id' => $book['id_author']];
+              $author = selectOne('authors', $params);
+              $params = ['id' => $book['id_genre']];
+              $genre = selectOne('genre', $params);
           ?>
 
           <tr>
@@ -68,8 +71,8 @@
               <td><?= $book['title']; ?></td>
               <td><?= $book['date_writing']; ?></td>
               <td><?= $book['description']; ?></td>
-              <td><?= $book['id_author']; ?></td>
-              <td><?= $book['id_genre']; ?></td>
+              <td><?= $author['name']; ?></td>
+              <td><?= $genre['genre']; ?></td>
           </tr>
 
           <?php

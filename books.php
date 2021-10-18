@@ -41,9 +41,14 @@
         </thead>
         <tbody>
           <?php
+
               $books = selectAll($table);
               foreach ($books as $book)
               {
+                $params = ['id' => $book['id_author']];
+                $author = selectOne('authors', $params);
+                $params = ['id' => $book['id_genre']];
+                $genre = selectOne('genre', $params);
           ?>
 
             <tr>
@@ -51,9 +56,9 @@
                 <td><?= $book['title']; ?></td>
                 <td><?= $book['date_writing']; ?></td>
                 <td><?= $book['description']; ?></td>
-                <td><?= $book['id_author']; ?></td>
-                <td><?= $book['id_genre']; ?></td>
-                <td><a href="update.php?table=<?= $table; ?>&id=<?= $book[0]; ?>">Edit</a></td>
+                <td><?= $author['name']; ?></td>
+                <td><?= $genre['genre']; ?></td>
+                <td><a href="update.php?table=<?= $table; ?>&id=<?= $book[0]; ?>&id_author=<?= $book[4];?>&id_genre=<?= $book[5]; ?>">Edit</a></td>
                 <td><a style="color: red" href="app/delete.php?table=<?= $table; ?>&id=<?= $book[0]; ?>">Delete</a></td>
             </tr>
 
@@ -77,7 +82,7 @@
 
             <div class="input-group mb-3">
               <label class="input-group-text" for="inputGroupSelect01">ID автора</label>
-              <input type='text' id='id_author' name='id_author' size="30" readonly></br></br>
+              <input type='text' id='id_author' name='id_author' value="1" size="30" readonly></br></br>
               <select onchange="show(event.target, 'id_author')" class="form-select" id="inputGroupSelect01">
                 <?php
                   $authors = selectAll('authors');
@@ -90,7 +95,7 @@
 
             <div class="input-group mb-3">
               <label class="input-group-text" for="inputGroupSelect01">ID жанра</label>
-              <input type='text' id='id_genre' name='id_genre' size="30" readonly></br></br>
+              <input type='text' id='id_genre' name='id_genre' value="1" size="30" readonly></br></br>
               <select onchange="show(event.target, 'id_genre')" class="form-select" id="inputGroupSelect01">
                 <?php
                   $genres = selectAll('genre');
